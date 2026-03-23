@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Maison — Restaurant Table Booking</title>
+    <meta name="description" content="Book your perfect dining experience at La Maison. Reserve tables online with our easy-to-use booking system.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">🍽️</span>
+                <span class="logo-text">La Maison</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#booking" class="nav-link">Book a Table</a></li>
+                <li><a href="#dashboard" class="nav-link">Dashboard</a></li>
+            </ul>
+            <button class="mobile-menu" id="mobileMenu" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <span class="hero-badge">✨ Fine Dining Experience</span>
+            <h1 class="hero-title">Reserve Your <span class="text-gradient">Perfect Table</span></h1>
+            <p class="hero-subtitle">Experience culinary excellence at La Maison. Book your table in seconds and let us craft an unforgettable evening for you.</p>
+            <a href="#booking" class="btn btn-primary btn-lg">
+                <span>Book Now</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-item">
+                <span class="stat-number">500+</span>
+                <span class="stat-label">Happy Guests</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">4.9</span>
+                <span class="stat-label">Rating</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">15</span>
+                <span class="stat-label">Tables</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="section booking-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Reservations</span>
+                <h2 class="section-title">Book Your Table</h2>
+                <p class="section-subtitle">Select your preferred date, time, and party size to see available tables</p>
+            </div>
+
+            <div class="booking-layout">
+                <!-- Booking Form -->
+                <div class="booking-form-card glass-card">
+                    <h3 class="card-title">Reservation Details</h3>
+                    <form id="bookingForm">
+                        <div class="form-group">
+                            <label for="guestName">Your Name</label>
+                            <input type="text" id="guestName" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="guestEmail">Email Address</label>
+                            <input type="email" id="guestEmail" placeholder="you@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="guestPhone">Phone Number</label>
+                            <input type="tel" id="guestPhone" placeholder="+1 (555) 000-0000" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="bookingDate">Date</label>
+                                <input type="date" id="bookingDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="bookingTime">Time</label>
+                                <select id="bookingTime" required>
+                                    <option value="">Select time</option>
+                                    <option value="17:00">5:00 PM</option>
+                                    <option value="17:30">5:30 PM</option>
+                                    <option value="18:00">6:00 PM</option>
+                                    <option value="18:30">6:30 PM</option>
+                                    <option value="19:00">7:00 PM</option>
+                                    <option value="19:30">7:30 PM</option>
+                                    <option value="20:00">8:00 PM</option>
+                                    <option value="20:30">8:30 PM</option>
+                                    <option value="21:00">9:00 PM</option>
+                                    <option value="21:30">9:30 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="guestCount">Number of Guests</label>
+                            <select id="guestCount" required>
+                                <option value="">Select guests</option>
+                                <option value="1">1 Guest</option>
+                                <option value="2">2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4 Guests</option>
+                                <option value="5">5 Guests</option>
+                                <option value="6">6 Guests</option>
+                                <option value="7">7 Guests</option>
+                                <option value="8">8 Guests</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="specialRequests">Special Requests</label>
+                            <textarea id="specialRequests" rows="3" placeholder="Dietary restrictions, celebrations, etc."></textarea>
+                        </div>
+                        <p class="table-select-hint" id="tableHint" style="display:none;">👆 Please select a table from the floor plan</p>
+                        <button type="submit" class="btn btn-primary btn-block" id="bookBtn" disabled>
+                            Select a Table to Continue
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Table Floor Plan -->
+                <div class="floor-plan-card glass-card">
+                    <h3 class="card-title">Restaurant Floor Plan</h3>
+                    <div class="floor-plan-legend">
+                        <span class="legend-item"><span class="legend-dot available"></span> Available</span>
+                        <span class="legend-item"><span class="legend-dot selected"></span> Selected</span>
+                        <span class="legend-item"><span class="legend-dot booked"></span> Booked</span>
+                    </div>
+                    <div class="floor-plan" id="floorPlan">
+                        <!-- Tables will be generated by JS -->
+                    </div>
+                    <p class="floor-plan-note">Click an available table to select it</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Confirmation Modal -->
+    <div class="modal-overlay" id="confirmationModal">
+        <div class="modal glass-card">
+            <div class="modal-icon">✅</div>
+            <h2 class="modal-title">Booking Confirmed!</h2>
+            <div class="confirmation-details" id="confirmationDetails">
+                <!-- Dynamic content -->
+            </div>
+            <div class="confirmation-id" id="confirmationId"></div>
+            <button class="btn btn-primary btn-block" onclick="closeModal()">Done</button>
+        </div>
+    </div>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard" class="section dashboard-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Owner Dashboard</span>
+                <h2 class="section-title">Manage Reservations</h2>
+                <p class="section-subtitle">View and manage all table bookings from one place</p>
+            </div>
+
+            <div class="dashboard-stats">
+                <div class="dash-stat glass-card">
+                    <div class="dash-stat-icon" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);">📅</div>
+                    <div class="dash-stat-info">
+                        <span class="dash-stat-value" id="totalBookings">0</span>
+                        <span class="dash-stat-label">Total Bookings</span>
+                    </div>
+                </div>
+                <div class="dash-stat glass-card">
+                    <div class="dash-stat-icon" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">👥</div>
+                    <div class="dash-stat-info">
+                        <span class="dash-stat-value" id="totalGuests">0</span>
+                        <span class="dash-stat-label">Total Guests</span>
+                    </div>
+                </div>
+                <div class="dash-stat glass-card">
+                    <div class="dash-stat-icon" style="background: linear-gradient(135deg, #10b981, #059669);">🪑</div>
+                    <div class="dash-stat-info">
+                        <span class="dash-stat-value" id="tablesBooked">0</span>
+                        <span class="dash-stat-label">Tables Booked Today</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-filters glass-card">
+                <div class="filter-group">
+                    <label for="filterDate">Filter by Date:</label>
+                    <input type="date" id="filterDate">
+                </div>
+                <button class="btn btn-outline" id="clearFilter">Show All</button>
+            </div>
+
+            <div class="reservations-table glass-card">
+                <div class="table-responsive">
+                    <table id="reservationsTable">
+                        <thead>
+                            <tr>
+                                <th>Confirmation #</th>
+                                <th>Guest Name</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Guests</th>
+                                <th>Table</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="reservationsBody">
+                            <!-- Dynamic rows -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="empty-state" id="emptyState">
+                    <span class="empty-icon">📋</span>
+                    <p>No reservations found</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">🍽️</span>
+                    <span class="logo-text">La Maison</span>
+                    <p>Fine dining at its best. Reserve your experience today.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="#home">Home</a>
+                    <a href="#booking">Book a Table</a>
+                    <a href="#dashboard">Dashboard</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>📍 123 Gourmet Blvd, Culinary City</p>
+                    <p>📞 +1 (555) 123-4567</p>
+                    <p>✉️ hello@lamaison.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 La Maison. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
